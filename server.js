@@ -8,7 +8,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-// Create http server
+// Create HTTP server
 const server = http.createServer(app);
 
 // Create instance of socket.io server
@@ -18,8 +18,11 @@ const io = new Server(server, {
 	},
 });
 
-// Define PORT from environment variables or use default
-const PORT = process.env.PORT || 4000;
+// Load environment variables
+const PORT = process.env.PORT || 10000;
+const SECRET_KEY = process.env.SECRET_KEY || 'default_secret_key'; // Fallback if .env is missing
+
+console.log(`🔑 Secret Key: ${SECRET_KEY}`); // Debugging (REMOVE in production)
 
 let choices = { p1Choice: null, p2Choice: null };
 
@@ -109,5 +112,5 @@ const declareWinner = room => {
 
 // Start the server
 server.listen(PORT, () => {
-	console.log(`Server running on Port ${PORT}`);
+	console.log(`🚀 Server running on Port ${PORT}`);
 });
