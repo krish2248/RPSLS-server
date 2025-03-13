@@ -1,3 +1,6 @@
+const helmet = require('helmet');
+app.use(helmet());
+
 require('dotenv').config(); // Load environment variables
 
 const express = require('express');
