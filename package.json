@@ -7,7 +7,7 @@
 		"start": "node server.js",
 		"dev": "nodemon server.js"
 	},
-	"author": "Prince Roy",
+	"author": "Krish Soni",
 	"license": "ISC",
 	"dependencies": {
 		"body-parser": "^1.20.2",
